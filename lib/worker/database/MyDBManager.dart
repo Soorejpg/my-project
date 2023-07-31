@@ -25,8 +25,6 @@ class DBStudentManager {
   }
 
 
-
-
   Future<List<Student>> getStudentList() async {
     await openDB();
     final List<Map<String, dynamic>> maps = await _datebase.query('student1');

@@ -2,6 +2,8 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:newyusli/login.dart';
+import 'package:newyusli/worker/techhome.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
@@ -75,7 +77,7 @@ class _DataDisplayWidgetState extends State<DataDisplayWidget> {
                           child:  Center(
                                           child: _imageFile == null
                                               ? Text('No image selected')
-                                              : Image.file(File(_imageFile!.path))),
+                                              : Image.file(File(_imageFile!.path),fit: BoxFit.fill,)),
                                        ),
 
                         ),
@@ -139,6 +141,12 @@ class _DataDisplayWidgetState extends State<DataDisplayWidget> {
                                 padding: const EdgeInsets.only(top: 5,left: 10,right: 10),
                                 child:  GestureDetector(
                                   onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => Techhome(),
+                                      ),
+                                    );
 
                                   },
                                   child:
@@ -167,6 +175,16 @@ class _DataDisplayWidgetState extends State<DataDisplayWidget> {
                                 padding: const EdgeInsets.only(top: 5,left: 10,right: 10),
                                 child:  GestureDetector(
                                   onTap: () {
+                                    dbStudentManager.deleteStudent(st.id);
+                                    setState(() {
+                                      studlist.removeAt(index);
+                                    });
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => Login(),
+                                      ),
+                                    );
 
                                   },
                                   child:
