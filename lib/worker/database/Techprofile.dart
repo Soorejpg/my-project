@@ -73,6 +73,7 @@ class _DataDisplayWidgetState extends State<DataDisplayWidget> {
                         radius: 86.0,
                         backgroundColor: Colors.white,
                         child: CircleAvatar(
+                          backgroundColor: Colors.white,
                           radius: 84.0,
                           child:  Center(
                                           child: _imageFile == null
@@ -83,26 +84,6 @@ class _DataDisplayWidgetState extends State<DataDisplayWidget> {
                         ),
                       ),
 
-                                //   child: CircleAvatar(
-                                //     radius: 86.0,
-                                //     backgroundColor: Colors.white,
-                                //     child:
-                                //     CircleAvatar(
-                                //       child:
-                                //
-                                //       Padding(
-                                //         padding: const EdgeInsets.only(top: 130,left: 130,bottom: 0,right: 0),
-                                //         child: CircleAvatar(
-                                //           backgroundColor:Colors.blue,
-                                //           radius: 12.0,
-                                //           child: CircleAvatar(
-                                //             radius: 10,
-                                //             backgroundColor: Colors.greenAccent,
-                                //             child: Center(
-                                //               child: _imageFile == null
-                                //                   ? Text('No image selected')
-                                //                   : Image.file(_imageFile),
-                                //             ),),),))),
                                              Column(
                                               mainAxisAlignment: MainAxisAlignment.end,
                                               children: [
@@ -112,11 +93,6 @@ class _DataDisplayWidgetState extends State<DataDisplayWidget> {
                                                   child: Icon(Icons.photo_library),
                                                 ),
                                                 SizedBox(height: 16),
-                                               ElevatedButton (
-                                                  onPressed: () => _pickImage(ImageSource.camera),
-
-                                                  child: Icon(Icons.camera_alt),
-                                                ),
                                               ],
                                             ),
 
@@ -144,7 +120,7 @@ class _DataDisplayWidgetState extends State<DataDisplayWidget> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) => Techhome(),
+                                        builder: (context) => Login(),
                                       ),
                                     );
 
@@ -158,12 +134,12 @@ class _DataDisplayWidgetState extends State<DataDisplayWidget> {
                                       children: [
                                         Padding(
                                             padding: const EdgeInsets.only(top: 36,bottom: 36,left: 25,),
-                                            child: Icon(Icons.person_search_rounded)
+                                            child: Icon(Icons.login)
                                         ),
 
                                         Padding(
                                           padding: const EdgeInsets.only(top: 36,bottom: 36,left: 14,right: 117),
-                                          child: Text("Mywork",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w400),),
+                                          child: Text("Go To Login",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w400),),
                                         ),
                                       ],
                                     ),

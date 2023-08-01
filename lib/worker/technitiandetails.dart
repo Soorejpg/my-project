@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Techdetails extends StatefulWidget {
   final String techBox;
@@ -111,7 +112,7 @@ class _TechdetailsState extends State<Techdetails> {
 
                                     ),
                                   ),
-                                  onPressed: () {
+                                  onPressed: () {launchUrl("tel:+917994930212");
                                   },
                                 ),
                               ),
@@ -205,7 +206,7 @@ class _TechdetailsState extends State<Techdetails> {
                         width: 200,
                         height: 50,
                         child: ElevatedButton(
-                          child: Text('Hire',style: TextStyle(color: Colors.greenAccent,fontWeight: FontWeight.w500,fontSize: 14)),
+                          child: Text('Call',style: TextStyle(color: Colors.greenAccent,fontWeight: FontWeight.w500,fontSize: 14)),
                           style: ElevatedButton.styleFrom(
                             padding: EdgeInsets.all(18.0),
                             backgroundColor: Color(0xfff9f9fc),
@@ -218,7 +219,7 @@ class _TechdetailsState extends State<Techdetails> {
 
                             ),
                           ),
-                          onPressed: () {
+                          onPressed: () {launchUrl("tel:+919074348984");
                           },
                         ),
                       ),
@@ -316,7 +317,7 @@ class _TechdetailsState extends State<Techdetails> {
     width: 200,
     height: 50,
     child: ElevatedButton(
-    child: Text('Hire',style: TextStyle(color: Colors.greenAccent,fontWeight: FontWeight.w500,fontSize: 14)),
+    child: Text('Call',style: TextStyle(color: Colors.greenAccent,fontWeight: FontWeight.w500,fontSize: 14)),
     style: ElevatedButton.styleFrom(
     padding: EdgeInsets.all(18.0),
     backgroundColor: Color(0xfff9f9fc),
@@ -329,7 +330,7 @@ class _TechdetailsState extends State<Techdetails> {
 
     ),
     ),
-    onPressed: () {
+    onPressed: () {launchUrl("tel:+917994930212");
     },
     ),
     ),
@@ -459,6 +460,13 @@ class _TechdetailsState extends State<Techdetails> {
               child: Text("aara"),
             )
         );
+    }
+  }
+  void launchUrl(String url) async {
+    if (await canLaunch(url)) {
+      launch(url);
+    } else {
+      throw "Could not launch $url";
     }
   }
 }

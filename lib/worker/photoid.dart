@@ -32,24 +32,17 @@ class _PhotoState extends State<Photo> {
                   }, icon: Icon(Icons.arrow_back_ios))
               ),
               Padding(padding: const EdgeInsets.only(top: 120, left: 15,),
-                child: Text('Almost there'),
+                child: Text('Personal Information'),
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 16),
-                child: Text("Let’s finish registration",
+                child: Text("Let’s know each other better",
                   style: TextStyle(fontWeight: FontWeight.w600, fontSize: 18),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 28,left: 132,right: 132),
-                child: CircleAvatar(
-                  backgroundColor: Colors.grey,
-                  radius: 100,
-                  child: IconButton(onPressed: (){}, icon: Icon(Icons.camera_alt_outlined)),
-                ),
-              ),
-              Padding(padding: const EdgeInsets.only(top: 35, left: 15,),
-                child: Text('Adhar Verification',style: TextStyle( fontSize: 14)),
+              //
+              Padding(padding: const EdgeInsets.only(top: 100, left: 15,),
+                child: Text('Adhar Verification',style: TextStyle( fontSize: 18)),
               ),
               Padding(
                 padding: const EdgeInsets.only(top:15,left:15),
@@ -109,10 +102,13 @@ class _PhotoState extends State<Photo> {
                     ),
                   ),
                   onPressed: () {
-    Navigator.push(
-    context,
-    MaterialPageRoute(builder: (context) => Personalinformation()),
-    );
+                    if (_formKey.currentState!.validate()){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Personalinformation()),
+                      );
+
+                    }
 
                     }
 

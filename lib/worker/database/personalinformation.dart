@@ -41,16 +41,21 @@ class _PersonalinformationState extends State<Personalinformation> {
               Padding(
                   padding: const EdgeInsets.only(top: 45, left: 10, right: 350),
                   child: IconButton(onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => Photo()),);
+
 
                   }, icon: Icon(Icons.arrow_back_ios))
               ),
-              Padding(padding: const EdgeInsets.only(top: 258, left: 15,),
-                child: Text('Personal Information'),
+              Padding(padding: const EdgeInsets.only(top: 200, left: 15,),
+                child: Text('Almost there'),
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 16),
                 child: Text(
-                  'Let’s know each other better',
+                  'Let’s finish registration',
                   style: TextStyle(fontWeight: FontWeight.w600, fontSize: 18),
                 ),
               ),
@@ -64,8 +69,6 @@ class _PersonalinformationState extends State<Personalinformation> {
                     ),
                     border: OutlineInputBorder(),
                     label: Text("Your Name"),
-
-
                   ),
                 ),
               ),
@@ -96,10 +99,9 @@ class _PersonalinformationState extends State<Personalinformation> {
                       ),
                     ),
                     onPressed: () {
+
                       submitStudent(context);
-
                     }
-
                 ),
               ),
 
@@ -108,7 +110,6 @@ class _PersonalinformationState extends State<Personalinformation> {
         )
     );
   }
-
   void submitStudent(BuildContext context) {
     if (_formKey.currentState!.validate()) {
       if (student == null) {
